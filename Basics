@@ -100,3 +100,50 @@ If showing a conflict error then fix the conflicts files then add the files, com
 git ignore file permission
 git config core.fileMode false
 
+
+To upload your project, first time in your git repository :
+ 
+Go to your project folder and type the below command in the terminal, this command just initializes your git access to the project folder.
+- git init
+
+Now to access your repository, you have to copy your repository http url, then type the below command in terminal.
+- git remote add origin [ ‘ here paste the http url of the repository’ ]
+
+Now you are ready to upload your project to the repository, the below command will start to add the project.
+- git add .
+
+For every upload you have to give a message to the project, type the below command in terminal
+- git commit -m “tell the message”
+
+The below command will upload your project to the branch in your repository
+- git push -u origin master
+
+
+To clone your project, from the existing git repository :
+
+Before cloning your project, Confirm the last commit from the graph in your repository, Then use the below command to clone the project.
+- git clone “ paste the http code of the project” --branch “branch name”
+
+     
+To check the difference after working with the cloned project :
+
+To know the files you have changed, use the below command in the terminal. Make sure before using this command you have to be in your project folder.
+- git status	
+
+Next use the below command to see the difference in each line of the files
+- git diff
+
+To commit your project, to the existing git repository :
+
+Before commit the changes use the below command to add the project. Note: “add .” the last dot is important, don't miss it.
+- git add .
+
+To give a message for your commit use the below command in your terminal.
+- git commit -m ‘type your changes in single line’
+
+Select the branch before your commit.
+- git branch
+
+Now type the below command in your terminal to upload the changes.
+- git push origin (branch name)
+
