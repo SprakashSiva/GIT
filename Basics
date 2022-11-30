@@ -1,0 +1,102 @@
+Git Basic commands
+  git init
+  git status
+  git add .
+  git commit -m "First Commit 2021-09-22"
+  after upload UI changes the file on 
+  git status
+  git diff {file_path}
+  git reset mode
+  git checkout -b base
+  
+  pull files from git 
+  git pull origin 
+  
+  
+I can't clone the git repository in my local system
+Error: 
+  Cloning into 'spiritual360'...
+fatal: unable to access 'http://git.websitestore.in/magento-projects/spiritual360.git/': server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+
+solution:
+  ram run below command(the issue is fixed)
+    git config --global http.sslverify false
+
+I can't run the composer install command for the spiritual60 install
+Error:
+  The requested package welt pixel/module-google-tag-manager could not be found in any version, there may be a typo in the package name.
+
+Solution:
+  Remove line 23 "weltpixel/module-google-tag-manager": "^1.10" from composer.json file on magento root directory(example spiritual360)
+
+1. Add files. means add all files from the current directory
+git add . 
+
+2. Commit the files and enter the reason
+git commit -m "Return/Refunds, commission percentage, create shipment" 
+
+3. Before committing please set your account default
+git config --global user.email "prakash.s@synamen.com"
+git config --global user.name "prakash.s"
+
+4. check the git status
+git status
+
+5. Push the files locally into a git repository
+git push origin base
+
+6. check the current repository
+git rev-parse --abbrev-ref HEAD
+
+git merge request in below via also use ( Don't Forget)
+git source project -> branches -> for example base branch click merge request then create a new merge request
+
+
+
+If you delete the last modify the file in git then use the below command and replace my-file.txt with your file name
+git checkout HEAD -- my-file.txt
+
+cloned git repository but not got the app folder so using the below command
+git checkout base  // means you get files from base
+
+if change the git user name & email
+1.git config user.name "prakash.s"  // set git user name
+2.git config user.email "prakash.s@synamen.com" // set git email
+3.git config --list  //if check all username and password 
+
+before any push please check the below thinks
+1.git status  // files modified or not 
+2.git add .  // .means current directory all files to git
+3.git commit -m "message"  // to commit  local files
+4.git status // 
+5.git log    // chceck user name,email
+6.git push origin base //base one of repositry
+
+
+Fix the git conflict issue on the local Example
+
+Create a new project directory and clone the project like a master
+->git clone --branch master 
+Add changes to the files like.gitignore then add and commit 
+->git add .
+Commit the last change
+->git commit -m “Message”
+Check the status
+->git status
+Checkout the demo branch from remote like the below command
+->git checkout demo (then demo branch with the latest commit on the local)
+Switch git branch 
+->git checkout demo
+Check current branch
+->git branch
+Check commit history
+->git log
+Check the master and demo branches, if the last commit is not pushed then push it to the remote branches
+->git push origin master
+Merge the demo branch to the master branch (The current branch is the master)
+->git merge demo
+If showing a conflict error then fix the conflicts files then add the files, commit, and push to the remote
+
+git ignore file permission
+git config core.fileMode false
+
